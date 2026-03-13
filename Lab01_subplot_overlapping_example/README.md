@@ -34,7 +34,7 @@ plot(theta, y, 'b-', 'LineWidth', 1);
 xlabel('theta');
 ylabel('Amplitude');
 title('cos (subplot)');
-
+![예제1 결과](./overlapping_capture.png)
 ```
 ### 파트 2: Overlapping (hold on)을 이용한 그래프 중첩 출력
 `hold on` 명령어를 사용하면 하나의 좌표축 위에 여러 개의 그래프를 겹쳐 그려서 신호 간의 위상 차이나 형태를 직접 비교할 수 있습니다.
@@ -63,3 +63,4 @@ xlabel('theta');
 ylabel('Amplitude');
 title('Overlapping sin & cos');
 grid on;
+![예제2 결과](./subplot_capture.png)
