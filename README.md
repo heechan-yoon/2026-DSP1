@@ -6,8 +6,8 @@
 
 * [Week 1: MATLAB 기초 및 삼각함수 시각화 (subplot & hold on)](./Lab01_subplot_overlapping_example/README.md)
 * [Week 2: MATLAB 기초 - 행렬 생성 및 연산 규칙 이해](./Lab02_basic%20operation/README.md)
-* [Week 3: 이산시간 시스템의 임펄스 응답과 컨볼루션] (예정)
-* [Week 4: DTFT 및 주파수 영역 분석] (예정)
+* [Week 3: MATLAB 그래프 그리기 - plot, hold on, subplot 이해](./Lab03_plotting%20graphs/README.md)
+* [Week 4: 주제 미정] (예정)
 
 ---
 ## 🛠 사용 도구
