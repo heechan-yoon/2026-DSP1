@@ -1,88 +1,103 @@
-# [DSP 실습 03] MATLAB Plotting Graphs: 다중 곡선 및 판넬 제어
-
----
+# [DSP 실습 03] MATLAB 그래프 그리기: `plot`, `hold on`, `subplot` 이해
 
 ## 1. 실습 목적
-- `plot()`과 `stem()` 함수를 이용한 연속 시간 및 이산 시간 신호 시각화 습득
-- `hold on` 및 `subplot` 명령어를 이용한 그래프 배치 및 제어 방법 학습
+- MATLAB의 `plot()` 함수를 이용하여 연속 신호 형태의 그래프를 그리는 방법을 익힌다.
+- `hold on` 명령어를 사용하여 **하나의 그래프 창에 여러 곡선(Multiple Curves)**을 동시에 표시하는 방법을 학습한다.
+- `subplot()` 함수를 이용하여 **하나의 figure 창을 여러 패널(Multiple Panels)**로 나누어 그래프를 배치하는 방법을 이해한다.
 
 ---
 
-## 2. 주요 명령어 요약
-| 명령어 | 기능 설명 |
-| :--- | :--- |
-| **`plot(t, x)`** | 연속 시간(Continuous-time) 그래프 생성 |
-| **`stem(k, x)`** | 이산 시간(Discrete-time) 그래프 생성 |
-| **`hold on / off`** | 현재 창에 그래프를 유지하며 겹쳐 그리기 제어 |
-| **`subplot(m, n, p)`** | 하나의 창을 m x n 구역으로 나누고 p번째 구역 선택 |
+## 2. 실습 예제 및 결과
 
----
+### Q1. 하나의 그래프 창에 두 곡선 그리기
 
-## 3. 실습 과제 상세
-
-### **3-1. Q1: DRAW MULTIPLE CURVES (hold on)**
-**[과제 내용]** 하나의 그래프 창에 `y1 = 2x^2 + 3*x - 5` (Red Solid)와 `y2 = 1.2x^2 + 4*x - 3` (Blue Dashed) 수식을 중첩하여 출력합니다. `hold on`을 사용하여 그래프가 겹쳐지도록 설정합니다.
-
-**[실습 결과]** ![Q1 결과 이미지](./q1_plot.png)
-
----
-
-### **3-2. Q2: PLOT WITH MULTIPLE PANELS (subplot)**
-**[과제 내용]** `subplot(1, 2, p)` 명령어를 사용하여 창을 좌우로 분할하고, 각각의 판넬에 독립적인 그래프를 배치합니다. 왼쪽에는 `y1`, 오른쪽에는 `y2`를 배치하며 각각의 축 범위(`axis`)를 다르게 설정합니다.
-
-**[실습 결과]** ![Q2 결과 이미지](./q2_plot.png)
-
----
-
-## 4. [전체 복사] 실습 통합 실행 코드
-> **아래 코드 블록을 한 번만 복사하여 MATLAB에 붙여넣으세요.** > Q1과 Q2 결과가 각각 독립된 Figure 창으로 출력됩니다.
+Q1에서는 `hold on` 명령어를 사용하여 하나의 좌표축 위에 두 개의 곡선을 동시에 표시하였다.  
+`x`의 범위는 0부터 5까지 0.5 간격으로 설정하였고, 두 개의 함수 `y1`, `y2`를 정의하여 같은 figure 창에 함께 나타내었다.
 
 ```matlab
-%% [Lab 03] Plotting Graphs 실습 통합 스크립트
-clear; clc; close all;
-
-% [0. 공통 데이터 설정]
+%% Q1 - Draw Multiple Curves
+% x 범위를 0부터 5까지 0.5 간격으로 생성
 x = 0:0.5:5;
+
+% 두 개의 곡선 정의
 y1 = 2*x.^2 + 3*x - 5;
 y2 = 1.2*x.^2 + 4*x - 3;
 
-%% ----------------------------------------------------
-%  3-1. Q1 - DRAW MULTIPLE CURVES (hold on 활용)
-% -----------------------------------------------------
-figure('Name', 'Q1: Multiple Curves');
+% figure 생성
+figure;
 
-% Curve 1: 빨간색 실선, 원형 마커, 두께 1.5, 내부 초록색
-plot(x, y1, '-or', 'MarkerFaceColor', 'g', 'LineWidth', 1.5); 
-hold on; % ★기존 그래프 유지
+% 첫 번째 곡선
+plot(x, y1, '-or', 'LineWidth', 1.5, 'MarkerFaceColor', 'g');
+hold on;
 
-% Curve 2: 파란색 점선, 원형 마커, 두께 1.5, 내부 초록색
-plot(x, y2, '--ob', 'MarkerFaceColor', 'g', 'LineWidth', 1.5); 
+% 두 번째 곡선
+plot(x, y2, 'b--o', 'LineWidth', 1.5, 'MarkerFaceColor', 'c');
 
-xlabel('X'); ylabel('Y');
+% 그래프 정보 추가
+xlabel('X');
+ylabel('Y');
+title('Q1 - Multiple Curves in One Plot');
 legend('Curve 1', 'Curve 2', 'Location', 'NorthWest');
-axis([0 5 -10 60]);
-title('Q1: Multiple Curves using hold on');
 grid on;
 hold off;
+```
 
-%% ----------------------------------------------------
-%  3-2. Q2 - PLOT WITH MULTIPLE PANELS (subplot 활용)
-% -----------------------------------------------------
-figure('Name', 'Q2: Subplot Panels');
+#### Q1 결과 그래프
+<img width="998" height="671" alt="lab03_Q1_capture" src="https://github.com/user-attachments/assets/5aa640c7-1e80-4aa0-a91b-7d68a7960e3e" />
 
-% [왼쪽 판넬] 1행 2열 중 1번째 칸: y1
-subplot(1, 2, 1); 
-plot(x, y1, '-or', 'MarkerFaceColor', 'g', 'LineWidth', 1.2);
-xlabel('X'); ylabel('Y');
+Q1 결과에서는 두 개의 곡선이 하나의 그래프 위에 함께 표시되는 것을 확인할 수 있다.  
+이때 `hold on`을 사용하지 않으면 두 번째 `plot()` 명령이 첫 번째 그래프를 덮어쓰게 되므로, 여러 곡선을 동시에 표현할 때 반드시 필요한 명령어임을 알 수 있다.
+
+---
+
+### Q2. `subplot`을 이용한 multiple panels 구성
+
+Q2에서는 `subplot(1,2,1)`과 `subplot(1,2,2)`를 사용하여 하나의 figure 창을 1행 2열 구조로 나누고, 각 패널에 서로 다른 곡선을 표시하였다.  
+이를 통해 여러 그래프를 한 화면에서 비교하는 방법을 확인할 수 있다.
+
+```matlab
+%% Q2 - Plot with Multiple Panels
+% x 범위를 0부터 5까지 0.5 간격으로 생성
+x = 0:0.5:5;
+
+% 두 개의 곡선 정의
+y1 = 2*x.^2 + 3*x - 5;
+y2 = 1.2*x.^2 + 4*x - 3;
+
+% figure 생성
+figure;
+
+% 첫 번째 패널
+subplot(1,2,1);
+plot(x, y1, '-or', 'LineWidth', 1.5, 'MarkerFaceColor', 'g');
+xlabel('X');
+ylabel('Y');
+title('Curve 1');
 legend('Curve 1', 'Location', 'NorthWest');
-axis([0 6 -10 60]);
-title('Panel 1: y1 = 2x^2 + 3x - 5');
+grid on;
 
-% [오른쪽 판넬] 1행 2열 중 2번째 칸: y2
-subplot(1, 2, 2); 
-% 검정 점선('--k')과 하늘색('c') 마커 사용
-plot(x, y2, '--ok', 'MarkerFaceColor', 'c', 'LineWidth', 1.2);
-xlabel('X'); ylabel('Y');
+% 두 번째 패널
+subplot(1,2,2);
+plot(x, y2, 'b--o', 'LineWidth', 1.5, 'MarkerFaceColor', 'c');
+xlabel('X');
+ylabel('Y');
+title('Curve 2');
 legend('Curve 2', 'Location', 'NorthWest');
-axis([0 6 -10 50]);
-title('Panel 2: y2 = 1.2x^2 + 4x - 3');
+grid on;
+```
+
+#### Q2 결과 그래프
+<img width="1036" height="677" alt="lab03_Q2_capture" src="https://github.com/user-attachments/assets/b634eaf7-1140-45ef-82a3-6bca69ed8575" />
+
+Q2 결과에서는 하나의 figure 창이 두 개의 패널로 나뉘고, 왼쪽에는 첫 번째 곡선, 오른쪽에는 두 번째 곡선이 각각 표시된다.  
+이 방식은 여러 데이터를 개별적으로 비교하거나 시각적으로 정리할 때 매우 유용하다.
+
+---
+
+## 3. 실습 내용 정리
+
+이번 실습에서는 MATLAB의 기본적인 그래프 출력 방식과 함께, 하나의 창에 여러 곡선을 겹쳐 그리는 방법과 여러 패널로 나누어 표현하는 방법을 학습하였다.
+
+Q1에서는 `hold on`을 사용하여 하나의 좌표축 위에 두 개의 곡선을 동시에 표시하였다. 이를 통해 여러 함수의 형태를 직접 비교할 수 있었다.
+
+Q2에서는 `subplot()`을 이용하여 하나의 figure를 여러 영역으로 나누고 각 영역에 개별 그래프를 배치하였다. 이를 통해 여러 그래프를 한 화면에서 효율적으로 비교할 수 있음을 확인하였다.
