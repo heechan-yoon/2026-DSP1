@@ -46,10 +46,6 @@ sample_signal_1(-1,3,0.01,fs(1),1,1,3,1,1);
 sample_signal_1(-1,3,0.01,fs(2),1,1,3,1,2);
 sample_signal_1(-1,3,0.01,fs(3),1,1,3,1,3);
 ```
-
-#### Q1 결과 그래프
-<img width="1000" alt="lab04_Q1_function_result" src="여기에_Q1_그래프_이미지_URL_삽입" />
-
 Q1 결과에서는 같은 연속 신호를 서로 다른 샘플링 주파수로 샘플링했을 때, 이산 샘플의 간격이 달라지는 것을 확인할 수 있다.  
 샘플링 주파수가 높을수록 원래의 연속 신호를 더 촘촘하게 표현함을 알 수 있다.
 
@@ -75,10 +71,6 @@ load pqfile p q
 p
 q
 ```
-
-#### Q2 결과 화면
-<img width="1000" alt="lab04_Q2_save_load_result" src="여기에_Q2_결과_이미지_URL_삽입" />
-
 Q2 결과를 통해 MATLAB에서는 변수 데이터를 파일에 저장한 뒤, 필요할 때 다시 불러와 재사용할 수 있음을 확인하였다.  
 이 기능은 실험 데이터를 보관하거나 반복 분석할 때 매우 유용하다.
 
@@ -163,10 +155,10 @@ xlim([0 20]);
 ```
 
 #### Problem 1 결과 그래프
-<img width="1000" alt="lab04_practice_q1_problem1" src="여기에_Practice_Q1_Problem1_이미지_URL_삽입" />
+<img width="506" height="677" alt="그림1" src="https://github.com/user-attachments/assets/13742c98-621a-4471-8dca-8086f2cd78b7" />
 
 #### Problem 2 결과 그래프
-<img width="1000" alt="lab04_practice_q1_problem2" src="여기에_Practice_Q1_Problem2_이미지_URL_삽입" />
+<img width="492" height="670" alt="그림2" src="https://github.com/user-attachments/assets/beda97d5-03c9-4272-a185-f9e4d640d0e6" />
 
 첫 번째 문제에서는 \(n=-2\)에서 값이 2, \(n=4\)에서 값이 -1이고 나머지는 모두 0인 impulse sequence를 확인할 수 있다.  
 두 번째 문제에서는 \(0 \le n \le 9\) 구간에서는 선형적으로 증가하고, \(10 \le n \le 19\) 구간에서는 지수적으로 감소하는 형태가 나타난다.
@@ -220,7 +212,7 @@ w = [2 1 6 9 12 11 14 13 6 4 3];
 ```
 
 #### Practice Question 2 결과 그래프
-<img width="1000" alt="lab04_practice_q2" src="여기에_Practice_Q2_이미지_URL_삽입" />
+<img width="1016" height="666" alt="그림3" src="https://github.com/user-attachments/assets/7b133b4b-e118-4e7f-84b0-9c7f607f33f4" />
 
 이 결과를 통해 두 유한 길이 시퀀스의 컨볼루션 결과 길이는 `7 + 5 - 1 = 11`이 됨을 확인할 수 있었다.  
 또한 `conv()` 함수가 두 시퀀스의 겹침 정도에 따라 출력값을 계산한다는 점을 시각적으로 이해할 수 있었다.
@@ -253,7 +245,7 @@ ylim([0 260]);
 ```
 
 #### Q4 결과 그래프
-<img width="1000" alt="lab04_q4_census_plot" src="여기에_Q4_이미지_URL_삽입" />
+<img width="1015" height="675" alt="그림4" src="https://github.com/user-attachments/assets/b4e5502b-f80a-4303-9b56-b170fef44ed7" />
 
 이 그래프에서는 시간이 지남에 따라 미국 인구가 꾸준히 증가하는 경향을 확인할 수 있다.  
 또한 선을 그리지 않고 marker만 표시하여 각 데이터가 개별 관측값이라는 점을 더 명확히 나타낼 수 있었다.
@@ -311,7 +303,7 @@ axis([-10 10 -0.5 1.5]);
 ```
 
 #### Q5 결과 그래프
-<img width="1000" alt="lab04_q5_function_plot" src="여기에_Q5_이미지_URL_삽입" />
+<img width="1028" height="682" alt="그림5" src="https://github.com/user-attachments/assets/a4bf6589-95fc-4f84-85d5-70f28c359beb" />
 
 이 결과를 통해 impulse sequence는 한 시점에서만 1의 값을 가지고, step sequence는 특정 시점 이후 1을 유지함을 확인할 수 있었다.  
 또한 rectangle sequence는 제한된 구간에서만 1의 값을 가지며, sinc 함수는 중심에서 최대값을 갖고 양옆으로 진동하면서 점차 감소하는 형태를 보였다.
