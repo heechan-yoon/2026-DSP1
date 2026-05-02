@@ -9,7 +9,7 @@
 * [Week 3: MATLAB 그래프 그리기 - plot, hold on, subplot 이해](./Lab03_plotting%20graphs/README.md)
 * [Week 4: Function, file save/load, convolution](/Lab04)
 * [Week 5: Z-transform, Inverse Z-transform](./Lab05_Z-transform)
-* [Week 6: 주제 미정] (예정)
+* [Week 6: DTFS, DTFT](./Lab06_DTFS,%20DTFT)
 * [Week 7: 주제 미정] (예정)
 ---
 ## 🛠 사용 도구
