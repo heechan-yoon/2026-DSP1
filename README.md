@@ -4,13 +4,14 @@
 
 ## 📂 실습 목차
 
-* [Week 1: MATLAB 기초 및 삼각함수 시각화 (subplot & hold on)](./Lab01_subplot_overlapping_example/README.md)
-* [Week 2: MATLAB 기초 - 행렬 생성 및 연산 규칙 이해](./Lab02_basic%20operation/README.md)
-* [Week 3: MATLAB 그래프 그리기 - plot, hold on, subplot 이해](./Lab03_plotting%20graphs/README.md)
-* [Week 4: Function, file save/load, convolution](/Lab04)
-* [Week 5: Z-transform, Inverse Z-transform](./Lab05_Z-transform)
-* [Week 6: DTFS, DTFT](./Lab06_DTFS,%20DTFT)
-* [Week 7: 주제 미정] (예정)
+* [Lab 1: MATLAB 기초 및 삼각함수 시각화 (subplot & hold on)](./Lab01_subplot_overlapping_example/README.md)
+* [Lab 2: MATLAB 기초 - 행렬 생성 및 연산 규칙 이해](./Lab02_basic%20operation/README.md)
+* [Lab 3: MATLAB 그래프 그리기 - plot, hold on, subplot 이해](./Lab03_plotting%20graphs/README.md)
+* [Lab 4: Function, file save/load, convolution](/Lab04)
+* [Lab 5: Z-transform, Inverse Z-transform](./Lab05_Z-transform)
+* [Lab 6: DTFS, DTFT](./Lab06_DTFS,%20DTFT)
+* [Lab 7, 8: DTFT, Sampling(1/2)](./Lab07_DTFT,%20Sampling)
+* [Lab 9: 예정] (예정)
 ---
 ## 🛠 사용 도구
 * **Language**: MATLAB
