@@ -11,8 +11,8 @@
 * [Lab 5: Z-transform, Inverse Z-transform](./Lab05_Z-transform)
 * [Lab 6: DTFS, DTFT](./Lab06_DTFS,%20DTFT)
 * [Lab 7, 8: DTFT, Sampling(1/2)](./Lab07_DTFT,%20Sampling)
-* [Lab 8, 9: Sampling(2/2), DFT](./Lab09_Sampling,%20DFT)
-* [Lab 10: 예정]
+* [Lab 8, 9: Sampling(2/2), DFT(1/2)](./Lab09_Sampling,%20DFT)
+* [Lab 10: DFT(2/2)](./Lab10_DFT,%20part,%202)
 ---
 ## 🛠 사용 도구
 * **Language**: MATLAB
