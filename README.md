@@ -13,6 +13,7 @@
 * [Lab 7, 8: DTFT, Sampling(1/2)](./Lab07_DTFT,%20Sampling)
 * [Lab 8, 9: Sampling(2/2), DFT(1/2)](./Lab09_Sampling,%20DFT)
 * [Lab 10: DFT(2/2)](./Lab10)
+* [Lab 11: FFT 및 Downsampling 후 Spectrum 변화](./Lab11)
 ---
 ## 🛠 사용 도구
 * **Language**: MATLAB
